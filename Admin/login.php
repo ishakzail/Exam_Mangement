@@ -1,9 +1,29 @@
+<?php
+        session_start();
+        if(count($_POST)>0) {
+            $connection = mysqli_connect("localhost" , "root" , "","gestion_etudiants");
+        
+        
+            $result = mysqli_query($connection ,"select * from admin where email = '".$_POST["email"]."' and motdepass = '".$_POST["motdepass"]."' ")
+                or die ("Failed to query database");
+        
+            $row = mysqli_fetch_array($result);
+                if(is_array($row)){
+                $_SESSION["id"] = $row['id'];
+                $_SESSION["email"] = $row['email'];
+
+                }else {
+                    $message = "Invalid Email or Password !";
+                }
+        }
+        if(isset($_SESSION["id"])){
+            echo "<script>window.open('tableau-bord.php','_self')</script>";  
+        }
+        
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-<?php
-    header("Location: tableau-bord.php"); 
-    exit;
-?>
 <head>
 
     <meta charset="utf-8">
@@ -35,7 +55,7 @@
                 <div class="row">
                 
                     <div class="col-lg-7">
-                        <form method="POST" action="database.php">
+                        <form method="POST" action="">
                             <div class="p-5">
                                 <div class="text-center">
                                     <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
@@ -43,7 +63,7 @@
                                 <form class="user">
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="text" class="form-control form-control-user" id="email"
+                                            <input type="text" class="form-control form-control-user" id="email" name="email"
                                                 placeholder="Email">
                                         </div>
                                     
@@ -51,16 +71,16 @@
                                     
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="password" class="form-control form-control-user"
+                                            <input type="password" class="form-control form-control-user" name="motdepass"
                                                 id="motdepass" placeholder="Password">
                                         </div>
                                         
                                     </div>
                                     <div class="form-group row">
                                         <div class="col-sm-6 mb-3 mb-sm-0">
-                                            <input type="submit" class="btn btn-primary btn-user btn-block" >
+                                            <input type="submit" name="submit" class="btn btn-primary btn-user btn-block" >
                                                     Se connecter
-</input>
+                                            </input>
                                         </div>
                                     </div>
                                     <hr>
@@ -89,7 +109,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="../js/sb-admin-2.min.js"></script>
-
+    
 </body>
-
+    
 </html>
