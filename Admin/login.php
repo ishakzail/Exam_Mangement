@@ -17,7 +17,7 @@
                 }
         }
         if(isset($_SESSION["id"])){
-            echo "<script>window.open('tableau-bord.php','_self')</script>";  
+            echo "<script>window.open('dashboard/tableau-bord.php','_self')</script>";  
         }
         
 ?>
