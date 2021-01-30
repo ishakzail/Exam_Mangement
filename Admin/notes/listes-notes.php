@@ -1,6 +1,6 @@
 <?php 
     session_start(); 
-    require_once 'process.php';
+   
 
 ?>
 
@@ -40,71 +40,46 @@
                 <div class="container-fluid">
 
                 <!-- Page Heading -->
-                    <a href="ajouter-etudiants"  class="btn btn-primary" style="margin-left : 1%;">Ajouter un étudiant</a>
+                    <a href="ajouter-note"  class="btn btn-primary" style="margin-left : 1%;">Ajouter les notes</a>
                     <br><br>
-                    <?php  
-                        
-                        if(isset($_SESSION['message_s'])){ ?>
-                        <div class="alert alert-danger" style ="float : right;">  
-                            <?php  
-                                echo $_SESSION['message_s'];
-                                unset($_SESSION['message_s']);
-                            ?> 
-                        </div>
-                    <?php } ?>
+                    
 
                 <!-- DataTales Example -->
                 <?php 
                     $connection = mysqli_connect('localhost', 'root', '', 'gestion_etudiants');
-                    $sql = "SELECT * from etudiant";
-                    $res = mysqli_query($connection, $sql);
-                    $res_num_row = mysqli_num_rows($res);
+                     // $sql = "SELECT * from matiere";
+                    $sql1 = "SELECT m.nom_mat , e.nom , e.prenom , n.noteMat  from matiere m , etudiant e , note n 
+                    where n.id_etud = e.id_etud and n.id_mat = m.id_mat ";
+                    $res = mysqli_query($connection, $sql1);
+                     // $res_num_row = mysqli_num_rows($res);
                     
                 
                 ?>
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Tableau des étudiants</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Tableau des notes des étudiants</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
-                                            <th>Nom</th>
-                                            <th>Prenom</th>
-                                            <th>Email</th>
-                                            <th>Filiere</th>
-                                            <th> Notes </th>
+                                            <th> Nom Etudiant </th>
+                                            <?php while($row = mysqli_fetch_array($res)){ ?>
+                                            <th> <?php echo $row[0]; ?> </th>
                                             <th>Actions</th>
+                                            <?php }?>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nom</th>
-                                            <th>Prenom</th>
-                                            <th>Email</th>
-                                            <th>Filiere</th>
-                                            <th> Notes </th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </tfoot>                                     
+                                                                
                                     <tbody> 
-                                        <?php
-                                        while($row = mysqli_fetch_array($res)){ ?>
+
+                                            <?php while($rows = mysqli_fetch_array($res)){ ?>
                                             <tr>
-                                                <td><?php echo $row['nom']; ?></td>
-                                                <td><?php echo $row['prenom']; ?></td>
-                                                <td><?php echo $row['email']; ?></td>
-                                                <td><?php echo $row['filiere']; ?></td>
-                                                <td> <a class="btn btn-success" href="listes-notes.php?afficher=<?php echo $row['id_etud'] ?>"> Notes </a> </td>
-                                               
-                                                <td> 
-                                                    <a href="modifier-etudiants.php?modifier=<?php echo $row['id_etud']; ?>"
-                                                        class="btn btn-info"><i class="fa fa-edit"></i></a>
-                                                    <a href="process.php?supprimer=<?php echo $row['id_etud']; ?>"
-                                                        class="btn btn-danger"><i class="fa fa-trash"></i></a>
-                                                </td>
+                                                <td><?php echo $rows[1]. " " .$rows[2]; ?></td>
+                                                <td><?php echo $rows[3]; ?></td>
+                                                
+                                                
                                             </tr>
                                             
                                     <?php }  ?>

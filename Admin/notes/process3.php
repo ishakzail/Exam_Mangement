@@ -5,17 +5,19 @@
     $connection = new mysqli('localhost', 'root', '', 'gestion_etudiants') or die(mysqli_error($mysqli));
     
     $nom_mat = "";
-    $semestre = "";
+    $date = "";
     $update = false ;
 
     // ajoute
     if(isset($_POST['ajouter'])){
-        $nom_mat = $_POST['nom_mat'];
-        $semestre = $_POST['semestre'];
-        $sql = "INSERT INTO matiere  (nom_mat, semestre ) VALUES ('$nom_mat' , '$semestre');";
-
-        mysqli_query($connection, $sql);      
-        header("location: listes-matieres.php");
+        $date = date("Y-m-d");
+        $count = count($_POST['id_mat']);
+            for($i = 0 ; $i< $count ; $i++){
+                $sql = "INSERT INTO matiere  (date, $mat_id ) VALUES ('$date' , '$mat_id');";
+                mysqli_query($connection, $sql) or die (mysqli_error($mysqli));      
+            }
+        
+        header("location: listes-exams.php");
     }
     
     // suppresion

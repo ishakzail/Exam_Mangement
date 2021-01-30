@@ -68,6 +68,55 @@
 
     }
 
+    // affichage note tableau
+    if(isset($_GET['afficher'])){
+        $id_etud = $_GET['afficher'];
+        $res = $connection->query("SELECT * from etudiant where id_etud = $id_etud") or die ($connection->error); 
+            $row = $res->fetch_array();
+            $nom = $row['nom'];
+            $prenom = $row['prenom'];
+            $email = $row['email'];
+            $filiere = $row['filiere'];
+    }
+
+    // GET in ajouter note 
+    if(isset($_GET['display'])){
+        $id_etud = $_GET['display'];
+        $res = $connection->query("SELECT * from etudiant where id_etud = $id_etud") or die ($connection->error); 
+            $row = $res->fetch_array();
+            $nom = $row['nom'];
+            $prenom = $row['prenom'];
+            $email = $row['email'];
+            $filiere = $row['filiere'];
+    }
+    
+   
+
+    // ajoute d'une note
+    if(isset($_POST['ajouter-n'])){
+        
+         $count = count($_POST['id_etud']);
+
+
+        for($i=0 ; $i <$count ; $i++){
+            $sqlN = "INSERT INTO note (id_etud , id_mat ,noteMat)
+               values ('";
+               $sqlN .= $_POST['id_etud'][$i] . "' , '";
+               $sqlN .= $_POST['id_mat'][$i] . "' , '";
+               $sqlN .= $_POST['noteMat'][$i] . "')";
+
+            $connection -> query($sqlN) or die ($connection->error);
+
+            header("location: listes-notes.php?afficher=$id_etud[$i]"); break;
+
+            continue;
+        }
+        
+        
+        //$_SESSION['message_a'] = "Note bien ajouté"; 
+        
+        
+    }
 
     
     ?>
