@@ -6,7 +6,7 @@
     $connection = mysqli_connect("localhost" , "root" , "","gestion_etudiants");
 
 
-    $result = mysqli_query($connection ,"select * from admin where email = '$email' and motdepass = '$motdepass' ")
+    $result = mysqli_query($connection ,"select * from etudiant where email = '$email' and motdepass = '$motdepass' ")
         or die ("Failed to query database");
 
     $row = mysqli_fetch_array($result);

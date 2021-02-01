@@ -9,15 +9,15 @@
         
             $row = mysqli_fetch_array($result);
                 if(is_array($row)){
-                $_SESSION["id"] = $row['id'];
+                $_SESSION["id_etud"] = $row['id_etud'];
                 $_SESSION["email"] = $row['email'];
 
                 }else {
                     $message = "Invalid Email or Password !";
                 }
         }
-        if(isset($_SESSION["id"])){
-            echo "<script>window.open('dashboard/tableau-bord.php','_self')</script>";  
+        if(isset($_SESSION["id_etud"])){
+            echo "<script>window.open('notes/listes-notes.php','_self')</script>";  
         }
         
 ?>
