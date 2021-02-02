@@ -58,6 +58,80 @@ if(!$_SESSION['email']){
                 <div class="container-fluid">
                         Tableau de bord 
                     <!-- Content Row -->
+                    <div class="row">
+                        <?php 
+                            $connection = mysqli_connect('localhost', 'root', '', 'gestion_etudiants');
+                            
+                            $sql1 = "SELECT count(*) as nbEtud from etudiant";
+                            $res = mysqli_query($connection, $sql1); 
+                            $nb = $res->fetch_assoc(); 
+                            
+
+                            
+                        ?>
+                        <!-- carte 1 -->
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Nombre des Etudiantes</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nb['nbEtud']; ?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-user fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carte 2 -->
+                        <?php 
+                            $sql2 = "SELECT count(*) as nbMat from matiere";
+                            $res = mysqli_query($connection, $sql2); 
+                            $nb = $res->fetch_assoc(); 
+                        ?>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-success shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                                Nombre des Matières</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nb['nbMat']; ?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-book fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carte 3 -->
+                        <?php 
+                            $sql3 = "SELECT count(*) as nbExam from examen";
+                            $res = mysqli_query($connection, $sql3); 
+                            $nb = $res->fetch_assoc(); 
+                        ?>
+                        <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="card border-left-primary shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                               Nombre des Examens</div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?php echo $nb['nbExam']; ?></div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-calendar-alt fa-2x text-gray-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
                 <!-- /.container-fluid -->
                    

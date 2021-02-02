@@ -1,4 +1,8 @@
-<?php session_start(); ?>
+<?php session_start();
+    if(!$_SESSION['email']){
+        header("location : login.php");
+    }
+?>
 
     <!-- Custom fonts for this template-->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

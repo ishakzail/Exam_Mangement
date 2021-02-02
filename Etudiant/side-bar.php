@@ -11,11 +11,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
-                <a class="nav-link" href="../dashboard/tableau-bord.php">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Tableau de bord</span></a>
-            </li>
+            
 
             <hr class="sidebar-divider my-0">
             <li class="nav-item active">
