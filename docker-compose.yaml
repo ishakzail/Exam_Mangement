@@ -1,0 +1,36 @@
+version: '3.7'
+services:
+  php-app:
+    image: php-app
+    container_name: app
+    build: ./app
+    ports:
+      - "9191:80"
+    depends_on:
+      - mariadb
+    networks:
+      - appNet
+  adminer:
+    image: adminer
+    networks:
+      - appNet
+    ports:
+      - 8080:8080
+    depends_on:
+      - mariadb
+    restart: on-failure
+  mariadb:
+    image: mariadb
+    container_name: mariadb
+    build: ./mariadb/
+    ports:
+      - 3306:3306
+    restart: on-failure
+    # volumes:
+    #   - my_database:/var/lib/mysql
+    networks:
+      - appNet
+
+networks:
+  appNet:
+      driver: bridge
