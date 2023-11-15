@@ -26,8 +26,6 @@ services:
     ports:
       - 3306:3306
     restart: on-failure
-    # volumes:
-    #   - my_database:/var/lib/mysql
     networks:
       - appNet
 
