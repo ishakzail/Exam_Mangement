@@ -61,7 +61,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="nom_filiere" name="nom_filiere"
-                                value="<?php echo $nom_filiere ?>"  placeholder="Nom Filiere">
+                                value="<?php echo $nom_filiere ?>"  placeholder="Nom Filiere" required>
                             </div> 
                         </div>
                         

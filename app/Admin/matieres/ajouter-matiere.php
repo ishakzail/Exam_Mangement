@@ -75,8 +75,8 @@
                                 $res = mysqli_query($connection, $sql);
                             
                             ?>
-                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_prof">
-                                <option value="0">--Choisir le professeur--</option>
+                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_prof" required>
+                                <option value="">--Choisir le professeur--</option>
                             <?php  while($row = mysqli_fetch_array($res)){ ?>
                                 <option value="<?php echo $row['id_prof'] ?>"><?php echo $row['nom']; ?> </option>   
                             <?php } ?>
@@ -88,7 +88,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="nom_mat" name="nom_mat"
-                                 placeholder="Nom Matière">
+                                 placeholder="Nom Matière" required>
                             </div> 
                         </div>
                         
@@ -96,7 +96,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" name="semestre"
-                                  id="semestre" placeholder="Semestre">
+                                  id="semestre" placeholder="Semestre" required>
                             </div>    
                         </div>
 

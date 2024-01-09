@@ -55,19 +55,19 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="nom" name="nom"
-                                value="<?php echo $nom ?>"  placeholder="Nom ">
+                                value="<?php echo $nom ?>"  placeholder="Nom " required>
                             </div> 
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="prenom" name="prenom"
-                                value="<?php echo $prenom ?>"  placeholder="Prenom">
+                                value="<?php echo $prenom ?>"  placeholder="Prenom" required>
                             </div> 
                         </div>
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="email" name="email"
-                                value="<?php echo $email ?>"  placeholder=Email">
+                                value="<?php echo $email ?>"  placeholder=Email" required>
                             </div> 
                         </div>
                              

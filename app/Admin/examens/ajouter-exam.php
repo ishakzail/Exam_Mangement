@@ -64,8 +64,8 @@
                                 $res = mysqli_query($connection, $sql);
                             
                             ?>
-                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_mat">
-                                <option value="0">--Choisir la matiere--</option>
+                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_mat" required>
+                                <option value="">--Choisir la matiere--</option>
                             <?php  while($row = mysqli_fetch_array($res)){ ?>
                                 <option value="<?php echo $row['id_mat'] ?>"><?php echo $row['nom_mat']; ?> </option>   
                             <?php } ?>
@@ -102,8 +102,8 @@
                                 $res = mysqli_query($connection, $sql);
                             
                             ?>
-                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_salle">
-                                <option value="0">--Choisir la salle--</option>
+                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_salle" required>
+                                <option value="">--Choisir la salle--</option>
                             <?php  while($row = mysqli_fetch_array($res)){ ?>
                                 <option value="<?php echo $row['id_salle'] ?>" ><?php echo $row['num_salle']; ?> </option>   
                             <?php } ?>
@@ -117,35 +117,35 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="date" class="form-control form-control-user" name="date_exam"
-                                  id="date_exam" placeholder="Date" >
+                                  id="date_exam" placeholder="Date"  required>
                             </div>    
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="time" class="form-control form-control-user" name="heure_debut"
-                                  id="heure_debut" placeholder="Heure de début" >
+                                  id="heure_debut" placeholder="Heure de début" required >
                             </div>    
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="time" class="form-control form-control-user" name="heure_fin"
-                                  id="heure_fin" placeholder="Heure de fin" >
+                                  id="heure_fin" placeholder="Heure de fin" required >
                             </div>    
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" name="prof_sup"
-                                  id="prof_sup" placeholder="Professeur Assistant" >
+                                  id="prof_sup" placeholder="Professeur Assistant" required>
                             </div>    
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" name="type_exam"
-                                  id="type_exam" placeholder="Type Exam" >
+                                  id="type_exam" placeholder="Type Exam" required>
                             </div>    
                         </div>
                         

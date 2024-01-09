@@ -45,7 +45,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="nom_mat" name="nom_mat"
-                                value="<?php echo $nom_mat; ?>"  placeholder="Nom Matière">
+                                value="<?php echo $nom_mat; ?>"  placeholder="Nom Matière"  required>
                             </div> 
                         </div>
                         
@@ -53,7 +53,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" name="semestre"
-                                value="<?php echo $semestre; ?>"  id="semestre" placeholder="Semestre">
+                                value="<?php echo $semestre; ?>"  id="semestre" placeholder="Semestre" required>
                             </div>    
                         </div>
 

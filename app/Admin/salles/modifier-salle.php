@@ -45,21 +45,21 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="num_salle" name="num_salle"
-                                value="<?php echo $num_salle ?>"  placeholder="Num salle">
+                                value="<?php echo $num_salle ?>"  placeholder="Num salle" required>
                             </div> 
                         </div>
                         
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="type_salle" name="type_salle"
-                                value="<?php echo $type_salle ?>"  placeholder="Type Salle">
+                                value="<?php echo $type_salle ?>"  placeholder="Type Salle" required>
                             </div> 
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="capacite" name="capacite"
-                                value="<?php echo $capacite ?>"  placeholder="Capacité">
+                                value="<?php echo $capacite ?>"  placeholder="Capacité" required>
                             </div> 
                         </div>
                         

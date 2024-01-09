@@ -54,11 +54,11 @@
                         
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
-                                <input type="hidden" name="id_etud[]" value="<?php echo $id_etud ?>" />
-                                <input type="hidden" name="id_mat[]" value="<?php echo $row['id_mat'] ?>" />
+                                <input type="hidden" name="id_etud[]" value="<?php echo $id_etud ?>" required />
+                                <input type="hidden" name="id_mat[]" value="<?php echo $row['id_mat'] ?>" required/>
                                 <label  value="<?php $row['id_mat'] ?>"><?php echo $row['nom_mat']; ?></label>
                                 <input type="number" class="form-control form-control-user" name="noteMat[]"
-                                  id="noteMat" placeholder="Note">
+                                  id="noteMat" placeholder="Note" required>
                             </div>                       
                         </div>
                         <?php } ?>                    

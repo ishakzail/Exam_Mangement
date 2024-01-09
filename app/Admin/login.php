@@ -61,7 +61,7 @@
                             <div class="col-lg-6 d-none d-lg-block "> 
                                 <img class="fit-picture"
                                     src="../img/logoEST.jpeg"
-                                    alt="Logo EST Oujda">
+                                    alt="Logo EST">
                                 
                                 </div>
                             <div class="col-lg-6">

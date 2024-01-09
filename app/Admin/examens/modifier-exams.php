@@ -113,35 +113,35 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="date" class="form-control form-control-user" name="date_exam"
-                                value="<?php echo $date_exam; ?>"  id="date_exam" placeholder="Date">
+                                value="<?php echo $date_exam; ?>"  id="date_exam" placeholder="Date" required>
                             </div>    
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="time" class="form-control form-control-user" name="heure_debut"
-                                value="<?php echo $heure_debut; ?>" id="heure_debut" placeholder="Heure de début">
+                                value="<?php echo $heure_debut; ?>" id="heure_debut" placeholder="Heure de début" required>
                             </div>    
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="time" class="form-control form-control-user" name="heure_fin"
-                                value="<?php echo $heure_fin; ?>" id="heure_fin" placeholder="Heure de fin">
+                                value="<?php echo $heure_fin; ?>" id="heure_fin" placeholder="Heure de fin" required>
                             </div>    
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" name="prof_sup"
-                                value="<?php echo $prof_sup; ?>"  id="prof_sup" placeholder="Professeur Assistant">
+                                value="<?php echo $prof_sup; ?>"  id="prof_sup" placeholder="Professeur Assistant" required>
                             </div>    
                         </div>
 
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" name="type_exam"
-                                value="<?php echo $type_exam; ?>" id="type_exam" placeholder="Type Exam">
+                                value="<?php echo $type_exam; ?>" id="type_exam" placeholder="Type Exam" required>
                             </div>    
                         </div>
                         <div class="form-group row">

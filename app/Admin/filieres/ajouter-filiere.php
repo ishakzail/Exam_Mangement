@@ -61,8 +61,8 @@
                                 $res = mysqli_query($connection, $sql);
                             
                             ?>
-                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_dept">
-                                <option value="0">--SELECT--</option>
+                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_dept" required>
+                                <option value="">--SELECT--</option>
                             <?php  while($row = mysqli_fetch_array($res)){ ?>
                                 <option value="<?php echo $row['id_dept'] ?>"><?php echo $row['nom_dept']; ?> </option>   
                             <?php } ?>
@@ -73,7 +73,7 @@
                         <div class="form-group row">
                             <div class="col-sm-6 mb-3 mb-sm-0">
                                 <input type="text" class="form-control form-control-user" id="nom_filiere" name="nom_filiere"
-                                value="<?php $nom_filiere?>" placeholder="Nom Filiers">
+                                value="<?php $nom_filiere?>" placeholder="Nom Filiers" required>
                             </div> 
                         </div>
 

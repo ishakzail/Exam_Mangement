@@ -88,8 +88,8 @@
                                 $res = mysqli_query($connection, $sql);
                             
                             ?>
-                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_fil">
-                                <option value="0">--SELECT--</option>
+                            <select class="custom-select custom-select-sm form-control form-control-sm" name="id_fil" required>
+                                <option value="">--SELECT--</option>
                             <?php  while($row = mysqli_fetch_array($res)){ ?>
                                 <option value="<?php echo $row['id_fil'] ?>"><?php echo $row['nom_filiere']; ?> </option>   
                             <?php } ?>
