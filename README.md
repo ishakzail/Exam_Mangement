@@ -1,10 +1,10 @@
-
-Copy code
 # Exam Management System
 
 This Exam Management System is a powerful CRUD (Create, Read, Update, Delete) application designed for administrators to efficiently manage exams, subjects, students, and marks in an educational environment.
 
 ## Features
+
+- **Departement Management**: manage departments.
 
 - **Subject Management**: Add, view, update, and delete subjects for academic courses.
 
@@ -24,8 +24,14 @@ You only need `docker-compose` to run this project. If you don't have Docker ins
 
 1. Clone this repository to your local machine:
 
-   ```bash
-   git clone https://github.com/your-username/exam-management.git
+```bash
+git clone https://github.com/ishakzail/exam-management.git
+```
+
+3. Navigate to the project directory:
+```
+cd exam-management
+```
 
 2. You can run this project with a single command:
 
@@ -33,11 +39,34 @@ You only need `docker-compose` to run this project. If you don't have Docker ins
 docker-compose up --build
 ```
 
+### Usage
 
+1. Open this URL in the browser
+```
+localhost:9191/Admin/login.php
+```
+
+2. Admin Credentials
+
+- **email :**
+  admin@admin.com
+- **password :**
+  admin
 ### Overview
+
 <details>
-  <summary>Dashboard</summary>
-     <img src="https://github.com/Maiichi/ft_transcendence/blob/develop/images/profile_.png" alt="profile" height="580" width="1080" />
-  </details>
+<summary>Dashboard</summary>
+  <img src="https://github.com/ishakzail/Exam_Mangement/blob/main/images/dashborad_.png" alt="dashboard" />
+</details>
+
+<details>
+<summary>Exam list</summary>
+  <img src="https://github.com/ishakzail/Exam_Mangement/blob/main/images/exam_list_.png" alt="dashboard" />
+</details>
+
+<details>
+<summary>Exam PV example</summary>
+  <img src="https://github.com/ishakzail/Exam_Mangement/blob/main/images/exam_PV_.png" alt="dashboard" />
+</details>
 
 
